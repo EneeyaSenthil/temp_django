@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'task_manager/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <strong>Created Date:</strong> {{ task.created_at }}<br>
+            <strong>What's the Task?</strong> {{ task.title }}<br>
+            <strong>Due Date:</strong> {{ task.due_date }} - <strong>Priority:</strong> {{ task.priority }}
+            <a href="{% url 'edit_task' task.id %}">Edit</a>
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Add Task</a>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Django and its dependencies
+Django==5.0.2
+asgiref==3.7.2
+sqlparse==0.4.4
+
+# Database drivers
+mysqlclient==2.2.4
+
+# Other dependencies
+python-decouple==3.8
